@@ -124,11 +124,6 @@ export default class AppContainer extends Component {
     this.setState({ selectedArtist: artist });
   }
 
-  handleChange(evt) {
-    this.setState({
-      inputValue: evt.target.value
-    });
-  }
 
   render () {
 
@@ -137,7 +132,6 @@ export default class AppContainer extends Component {
       toggle: this.toggle,
       selectAlbum: this.selectAlbum,
       selectArtist: this.selectArtist,
-      handleChange: this.handleChange
 
     });
     return (
