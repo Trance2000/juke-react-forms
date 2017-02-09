@@ -124,13 +124,21 @@ export default class AppContainer extends Component {
     this.setState({ selectedArtist: artist });
   }
 
+  handleChange(evt) {
+    this.setState({
+      inputValue: evt.target.value
+    });
+  }
+
   render () {
 
     const props = Object.assign({}, this.state, {
       toggleOne: this.toggleOne,
       toggle: this.toggle,
       selectAlbum: this.selectAlbum,
-      selectArtist: this.selectArtist
+      selectArtist: this.selectArtist,
+      handleChange: this.handleChange
+
     });
     return (
       <div id="main" className="container-fluid">

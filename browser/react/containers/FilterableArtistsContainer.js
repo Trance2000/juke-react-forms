@@ -11,15 +11,11 @@ export default class FilterableArtistsContainer extends React.Component {
       inputValue: ' ',
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.props.handleChange = this.props.handleChange.bind(this);
 
   }
 
-  handleChange(evt) {
-    this.setState({
-      inputValue: evt.target.value
-    });
-  }
+  
 
   render () {
     const inputValue = this.state.inputValue;
@@ -27,7 +23,7 @@ export default class FilterableArtistsContainer extends React.Component {
       artist.name.match(inputValue));
     return (
       <div>
-        <FilterInput handleChange={this.handleChange}/>
+        <FilterInput handleChange={this.props.handleChange}/>
         <Artists artists={filteredArtists}/>
 
       </div>
