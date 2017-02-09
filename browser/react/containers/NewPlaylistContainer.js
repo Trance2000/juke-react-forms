@@ -23,6 +23,10 @@ export default class NewPlaylistContainer extends React.Component {
     return true;
   }
 
+  warning() {
+
+  }
+
   handleChange(evt) {
 
     this.setState({
@@ -40,10 +44,15 @@ export default class NewPlaylistContainer extends React.Component {
   }
 
   render () {
+    let wayTooLong;
+
+    if (this.state.inputValue.length > 20) {
+      wayTooLong = true
+    } else { wayTooLong = false }
 
     return (
       <div>
-        <NewPlaylist handleSubmit={this.handleSubmit} handleChange={this.handleChange} inputValue={this.state.inputValue} isDisabled={this.validateInput}/>
+        <NewPlaylist handleSubmit={this.handleSubmit} handleChange={this.handleChange} inputValue={this.state.inputValue} isDisabled={this.validateInput} warning={this.warning} wayTooLong={wayTooLong} warningMessage={'this is a warning'}/>
       </div>
     );
   }
